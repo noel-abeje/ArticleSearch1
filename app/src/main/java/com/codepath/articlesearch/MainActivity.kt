@@ -35,16 +35,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val articleAdapter = ArticleAdapter(this, articles)
-        articlesRecyclerView.adapter = articleAdapter
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
         articlesRecyclerView = findViewById(R.id.articles)
-        // TODO: Set up ArticleAdapter with articles
 
+        // TODO: Set up ArticleAdapter with articles
+        val articleAdapter = ArticleAdapter(this, articles)
+        articlesRecyclerView.adapter = articleAdapter
 
         articlesRecyclerView.layoutManager = LinearLayoutManager(this).also {
             val dividerItemDecoration = DividerItemDecoration(this, it.orientation)
